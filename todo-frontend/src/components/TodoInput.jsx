@@ -26,9 +26,8 @@ class TodoInput extends Component {
   handleChange(event) {
     const { value } = event.target;
     this.setState({ task: value });
-
   }
-  
+
   // SUBMIT 
   todoSubmit = async (event) => {
     event.preventDefault();
