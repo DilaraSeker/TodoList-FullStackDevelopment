@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // API SERVICE
-import TodoApi from "../services/TodoApi";
+import TodoApi from "../service/TodoApi";
 // CSS
 import '../style.css';
 // TODO ITEM FOR EACH TODO
@@ -11,7 +11,11 @@ export default class TodoListAll extends Component {
   // CONSTRUCTOR
   constructor(props) {
     super(props);
-
+     // STATES
+     this.state = {
+      todoList: [],
+      show: false,
+    }
   }
 
   // BEFORE RENDER COMPONENT

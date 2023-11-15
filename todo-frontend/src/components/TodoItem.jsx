@@ -5,7 +5,7 @@ import { faTrash, faPen, faCheck } from '@fortawesome/free-solid-svg-icons';
 // CSS FILE
 import '../style.css';
 // API SERVICE
-import TodoApi from "../services/TodoApi";
+import TodoApi from "../service/TodoApi";
 // BOOTSTRAP MODAL & BUTTON
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';

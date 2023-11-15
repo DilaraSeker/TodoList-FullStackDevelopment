@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 // API SERVICE
-import TodoApi from '../services/TodoApi';
+import TodoApi from '../service/TodoApi';
 //ROUTER
 import { withRouter } from "react-router-dom";
 
