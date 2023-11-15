@@ -1,5 +1,5 @@
 package com.dilaraseker.todolist.repository;
-
+// Todo Model
 import com.dilaraseker.todolist.model.Todo;
 // JPA Repository
 import org.springframework.data.jpa.repository.JpaRepository;
