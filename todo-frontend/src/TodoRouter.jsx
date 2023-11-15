@@ -39,7 +39,7 @@ function TodoRouter() {
                     <br /><br />
                     <Switch>
                         <Route path="/" exact component={TodoListAll}></Route>
-                        <Route path="/todos/list" component={TodoListDone}></Route>
+                        <Route path="/todos/list" component={TodoListAll}></Route>
                         <Route path="/todos/done" component={TodoListDone}></Route>
                         <Route path="/todos/undone" component={TodoListUndone}></Route>
                         <Route path="/todo/update/:id" component={TodoUpdate}></Route>
