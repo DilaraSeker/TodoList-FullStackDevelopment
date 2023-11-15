@@ -1,0 +1,37 @@
+/* 
+Project Name   : Todo List
+Project Author : Dilara Şeker
+Project Date   : 04.11.2023
+Project Version:V1.0.0
+*/
+
+/* ************************************************************************************** */
+
+/* Common Properties */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0px;
+}
+
+:root {
+    --template_bg_color: #ffffff;
+    --template_color: #000000;
+}
+
+html {
+    font-size: 15px;
+}
+
+body {
+    background-color: var(--template_bg_color);
+    color: var(--template_color);
+    font-family: 'Ubuntu', sans-serif;
+    position: relative;
+}
+
+.app {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
