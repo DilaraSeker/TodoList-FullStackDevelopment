@@ -107,7 +107,7 @@ input[type="text"] {
 
 /* Add Button Hover*/
 .add-btn:hover {
-    background-color: #4FA0B5;
+    background-color: #00a7d1;
     color: white;
     cursor: pointer;
 }
@@ -142,7 +142,7 @@ input[type="text"] {
 
 /* List Buttons Hover */
 .list-btns:hover {
-    background-color: #4FA0B5;
+    background-color: #00a7d1;
     color: white;
     cursor: pointer;
 }
@@ -168,10 +168,10 @@ input[type="text"] {
 
 /* Task */
 .todo {
-    float: left;
+float: left;
     font-size: 0.9rem;
     height: 2rem;
-    margin-left: 0.7rem;
+    margin-left: 0.5rem;
     overflow: auto;
     text-align: left;
     width: 75%;
@@ -181,6 +181,7 @@ input[type="text"] {
 .list-icons {
     float: right;
     margin-right: 0.7rem;
+    margin-top: -0.7rem;
 }
 
 /* List Pen Icon */
@@ -198,82 +199,58 @@ input[type="text"] {
     width: 2rem;
 }
 
-/* Checkbox */
-.custom-checkbox {
+/* List Checkbox */
+.list-check-icon {
+    display: inline-block;
+    font-size: 1rem;
+    height: 1.78rem;
+    margin-right: 0.9rem;
+}
+
+.checkbox-container {
+    align-items: center;
+    cursor: pointer;
     display: inline;
-    cursor: pointer;
-    margin-right: 2rem;
     position: relative;
 }
-
-/* Hide the default checkbox input */
-.custom-checkbox input[type="checkbox"] {
-    display: none;
-}
-
-/* Custom checkbox appearance */
-.custom-checkbox .checkmark {
-    /* Background color when unchecked */
-    background-color: white;
-    /* Green border color */
-    border: 2px solid #4a7b49;
-    border-radius: 2px;
-    /* Size of the custom checkbox */
-    height: 0.97rem;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 0.97rem;
-}
-
-/* Style for the FontAwesome icon checkbox */
-.custom-checkbox .checkmark .fa-check {
-    /* Green color for the checked icon */
-    color: #4a7b49;
-    display: block;
-    /* Height  of the check mark icon */
-    height: 0.9rem;
-    /* Center the icon horizontally */
-    text-align: center;
-    margin-top: -0.1rem;
-    /* Width  of the check mark icon */
-    width: 0.7rem;
-}
-
-/* Hide the FontAwesome icon checkbox by default */
-.custom-checkbox input[type="checkbox"]:checked+.checkmark .fa-icon {
-    display: none;
-}
-
-/* Create a custom checkbox container */
-/* .custom-checkbox {
+.checkbox {
+    border: 1.95px solid gray;
+    border-radius: 1.5px;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-top: 1rem;
     position: relative;
-    padding-left: 30px;
-    cursor: pointer;
-    line-height: 15px; 
-  }
-   */
-/* Style the custom checkbox */
-/* .custom-checkbox::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    border: 2.6px solid #4A7B49; /* Change the border color here */
-/* background-color: #fff; /* Background color for the checkbox */
-/* cursor: pointer;
-    font-weight: 900; 
-  } */
 
-/* Style the checkbox container when checked */
-/* input[type="checkbox"]:checked + .custom-checkbox::before {
-    content: '\2713'; /* Checkmark symbol (✓) or any other symbol you prefer */
-/* color: #4A7B49; /* Color of the checkmark symbol when checked */
-/* Checkbox rengi beyaz, border ve işaret rengi yeşil */
-/* Checkbox rengi beyaz, border ve işaret rengi yeşil */
-/* Checkbox rengi beyaz, border ve işaret rengi yeşil */
-/* Checkbox styling */
-/* Checkbox styling */
+}
+.checkmark {
+    width: 4px;
+    height: 7.5px;
+    border-bottom: 1.95px solid #0d8d0b;
+    border-right: 1.95px solid #0d8d0b;
+    transform: rotate(40deg);
+    position: absolute;
+    left: 2.4px;
+}
+.checkbox-container.checked .checkbox {
+    border-color: #0d8d0b;
+}
+
+
+/* ************************************************************************************** */
+
+/* Delete Buttons */
+.delete-btns {
+    background-color: #C8454D;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    height: 2rem;
+    width: 48%;
+}
+
+/* Delete Buttons Hover */
+.delete-btns:hover {
+    background-color: rgb(214, 41, 52);
+    color: white;
+    cursor: pointer;
+}
