@@ -44,7 +44,6 @@ export default class TodoItem extends Component {
         const { todo } = this.props;
         this.setState({ todo: todo });
         console.log(todo)
-        console.log("deneme")
     }
 
     // DELETE
@@ -83,21 +82,12 @@ export default class TodoItem extends Component {
                 <div className='list-icons'>
                     {/* Complete Icon */}
                     <i className='list-check-icon'  >
-                        <label className='custom-checkbox'>
-                            <input
-                                type='checkbox'
-                                checked={isChecked}
-                                onChange={this.toggleCheckbox}
-                            />
-                            <span className='checkmark'>
-                                {isChecked ? (
-                                    <FontAwesomeIcon icon={faCheck} style={{ color: '#4a7b49' }} />
-                                ) : (
-                                    <FontAwesomeIcon icon='fa-solid fa-check' style={{ color: '#4a7b49' }} />
-                                )}
-                            </span>
-                        </label>
+                        <div className={`checkbox-container ${isChecked ? 'checked' : ''}`} onClick={this.toggleCheckbox}>
+                            <div className="checkbox">{isChecked && <div className="checkmark" />}</div>
+                        </div>
                     </i>
+
+
                     {/* Edit Pen Icon */}
                     <i className='list-pen-icon'>
                         <FontAwesomeIcon icon={faPen} onClick={this.handleShow} style={{ "cursor": "pointer" }} />
