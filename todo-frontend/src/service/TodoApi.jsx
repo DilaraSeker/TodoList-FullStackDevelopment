@@ -37,7 +37,7 @@ class TodoApi {
 
     // DELETE ALL
     todoApiDeleteAll() {
-        return axios.get(`${TODO_URL}/deleteall`);
+        return axios.delete(`${TODO_URL}/deleteall`);
     }
 
 } // END 
