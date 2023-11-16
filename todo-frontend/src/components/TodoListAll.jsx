@@ -11,8 +11,8 @@ export default class TodoListAll extends Component {
   // CONSTRUCTOR
   constructor(props) {
     super(props);
-     // STATES
-     this.state = {
+    // STATES
+    this.state = {
       todoList: [],
       show: false,
     }
@@ -28,7 +28,6 @@ export default class TodoListAll extends Component {
       }).catch((error) => {
         console.log("Cannot get list from database")
       });
-
   }
 
   render() {
@@ -36,7 +35,10 @@ export default class TodoListAll extends Component {
       <div className="list">
         {
           this.state.todoList.map(temp =>
-            <TodoItem todo={temp}>{console.log(temp)}</TodoItem>
+            <div>
+              <TodoItem todo={temp}>{console.log(temp)}</TodoItem>
+              <div className="space"></div>
+            </div>
           )
         }
       </div>
