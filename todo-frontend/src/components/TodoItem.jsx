@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // ICONS
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash, faPen, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faPen } from '@fortawesome/free-solid-svg-icons';
 // CSS FILE
 import '../style.css';
 // API SERVICE
@@ -14,6 +14,7 @@ import TodoUpdate from './TodoUpdate';
 
 // TODO ITEM COMPONENT
 export default class TodoItem extends Component {
+
     // CONSTRUCTOR
     constructor(props) {
         super(props);
@@ -43,6 +44,7 @@ export default class TodoItem extends Component {
     componentDidMount() {
         const { todo } = this.props;
         this.setState({ todo: todo });
+        this.setState({ isChecked: todo.completed });
         console.log(todo)
     }
 
@@ -53,7 +55,7 @@ export default class TodoItem extends Component {
             (response) => {
                 this.setState({
                     todoList: this.state.todoList.filter(
-                        todoList => todoList.id != id
+                        todoList => todoList.id !== id
                     )
                 });
                 console.log()
@@ -64,19 +66,39 @@ export default class TodoItem extends Component {
     }
 
     // TOGGLE CHECKBOX
-    toggleCheckbox = () => {
+    toggleCheckbox = async () => {
         this.setState((prevState) => ({
             isChecked: !prevState.isChecked,
         }));
+        if (this.state.isChecked == false) {
+            console.log("false")
+        }
+        const todoDTO =
+        {
+            task: this.state.todo.task,
+            id: this.state.todo.id,
+            completed: !this.state.isChecked
+        }
+        console.log(todoDTO)
+        // UPDATE FROM DATABASE
+        TodoApi.todoApiUpdate(this.state.todo.id, todoDTO).then((response) => {
+            if (response.status === 200) {
+
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+
+        window.location.reload()
     };
 
     render() {
-        const { isChecked } = this.state;
+
         return (
             <div className='list-item'>
-                
+
                 {/* Task */}
-                <p className='todo' style={{ textDecoration: isChecked ? 'line-through' : 'none' }} >
+                <p className='todo' style={{ textDecoration: this.state.isChecked ? 'line-through' : 'none' }} >
                     {this.state.todo.task}
                 </p>
 
@@ -85,8 +107,8 @@ export default class TodoItem extends Component {
 
                     {/* Complete Icon */}
                     <i className='list-check-icon'  >
-                        <div className={`checkbox-container ${isChecked ? 'checked' : ''}`} onClick={this.toggleCheckbox}>
-                            <div className="checkbox">{isChecked && <div className="checkmark" />}</div>
+                        <div className={`checkbox-container ${this.state.isChecked ? 'checked' : ''}`} onClick={this.toggleCheckbox}>
+                            <div className="checkbox">{this.state.isChecked && <div className="checkmark" />}</div>
                         </div>
                     </i>
 
