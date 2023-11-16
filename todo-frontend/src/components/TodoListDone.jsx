@@ -8,6 +8,7 @@ import TodoItem from './TodoItem';
 
 // DONE TODOS COMPONENT
 export default class TodoListDone extends Component {
+
   // CONSTRUCTOR
   constructor(props) {
     super(props);
@@ -23,18 +24,15 @@ export default class TodoListDone extends Component {
   componentDidMount() {
     TodoApi.todoApiList().then(
       (response) => {
-        // if(response.data.completed == true){
         this.setState({
           todoList: response.data
         })
-        //}
-
       }).catch((error) => {
         console.log("Cannot get list from database")
       });
   }
-  
-  // Filter condition
+
+  // FILTER CONDITION
   filterCondition = (item) => item.completed === true;
 
   render() {
