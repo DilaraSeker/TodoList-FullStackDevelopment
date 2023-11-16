@@ -1,5 +1,6 @@
-package com.dilaraseker.todolist.controller;
+package com.dilaraseker.todolist.controller.impl;
 // Todo Model
+import com.dilaraseker.todolist.controller.ITodoController;
 import com.dilaraseker.todolist.model.Todo;
 // Todo Service
 import com.dilaraseker.todolist.service.TodoService;
@@ -14,7 +15,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/todos")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-public class TodoController {
+public class TodoControllerImpl implements ITodoController<Todo> {
 
     @Autowired
     private TodoService todoService;
