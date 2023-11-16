@@ -74,19 +74,21 @@ export default class TodoItem extends Component {
         const { isChecked } = this.state;
         return (
             <div className='list-item'>
+                
                 {/* Task */}
-                <p className='todo'>
+                <p className='todo' style={{ textDecoration: isChecked ? 'line-through' : 'none' }} >
                     {this.state.todo.task}
                 </p>
+
                 {/* Icons */}
                 <div className='list-icons'>
+
                     {/* Complete Icon */}
                     <i className='list-check-icon'  >
                         <div className={`checkbox-container ${isChecked ? 'checked' : ''}`} onClick={this.toggleCheckbox}>
                             <div className="checkbox">{isChecked && <div className="checkmark" />}</div>
                         </div>
                     </i>
-
 
                     {/* Edit Pen Icon */}
                     <i className='list-pen-icon'>
@@ -106,6 +108,7 @@ export default class TodoItem extends Component {
                             </Button>
                         </Modal.Footer>
                     </Modal>
+
                     {/* Delete Trash Icon */}
                     <i style={{ "cursor": "pointer" }} className='list-trash-icon'
                         onClick={() => {
