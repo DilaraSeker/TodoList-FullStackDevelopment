@@ -12,20 +12,21 @@ class DeleteButtons extends Component {
         //BIND
         this.deleteAllTodos = this.deleteAllTodos.bind(this);
         this.deleteDoneTodos = this.deleteDoneTodos.bind(this);
-    
+
     }
     // DELETE ALL
     deleteAllTodos() {
         TodoApi.todoApiDeleteAll().then(
             (response) => {
-              console.log(response)
+                console.log(response)
             }).catch((error) => {
-              console.log(error)
+                console.log(error)
             });
+        window.location.reload()
     }
     // DELETE DONE
     deleteDoneTodos() {
-       
+
     }
 
     render() {
