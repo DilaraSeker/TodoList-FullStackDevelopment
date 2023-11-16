@@ -11,10 +11,11 @@ export default class TodoListDone extends Component {
   // CONSTRUCTOR
   constructor(props) {
     super(props);
-     // STATES
-     this.state = {
+    // STATES
+    this.state = {
       todoList: [],
       show: false,
+      todoListDone: [],
     }
   }
 
@@ -22,28 +23,30 @@ export default class TodoListDone extends Component {
   componentDidMount() {
     TodoApi.todoApiList().then(
       (response) => {
-       // if(response.data.completed == true){
-          this.setState({
-            todoList: response.data
-          })
+        // if(response.data.completed == true){
+        this.setState({
+          todoList: response.data
+        })
         //}
-        
+
       }).catch((error) => {
         console.log("Cannot get list from database")
       });
-      
   }
+  
+  // Filter condition
+  filterCondition = (item) => item.completed === true;
 
   render() {
-    
+    const filteredArray = this.state.todoList.filter(this.filterCondition);
     return (
       <div className="list">
         {
-          this.state.todoList.map(temp =>
-            
-           
-            <TodoItem todo={temp}>{console.log(temp)}</TodoItem>
-        
+          filteredArray.map(temp =>
+            <div>
+              <TodoItem todo={temp}>{console.log(temp)}</TodoItem>
+              <div className="space"></div>
+            </div>
           )
         }
       </div>
