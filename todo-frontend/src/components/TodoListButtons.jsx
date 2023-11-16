@@ -16,11 +16,11 @@ class TodoListButtons extends Component {
   listAllTodos() {
     this.props.history.push("/todos/list")
   }
-  // DONE
+  // LIST COMPLETED TASKS
   listDoneTodos() {
     this.props.history.push("/todos/done")
   }
-  // TODO (UNDONE)
+  // LIST NOT COMPLETED TASKS
   listUndoneTodos() {
     this.props.history.push("/todos/undone")
   }
