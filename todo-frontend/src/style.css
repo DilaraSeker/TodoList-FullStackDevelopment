@@ -162,8 +162,8 @@ input[type="text"] {
 }
 
 /* Space between Todo Items */
-.bosluk {
-    height: 1rem;
+.space {
+    height: 0.5rem;
 }
 
 /* Task */
