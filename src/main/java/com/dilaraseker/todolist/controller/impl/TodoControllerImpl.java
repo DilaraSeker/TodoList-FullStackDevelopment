@@ -57,7 +57,7 @@ public class TodoControllerImpl implements ITodoController<Todo> {
         return ResponseEntity.ok(true);
     }
     // DELETE ALL TODOS
-    @DeleteMapping("/delete/all")
+    @DeleteMapping("/deleteall")
     public ResponseEntity<Boolean> deleteAllTasks() {
         todoService.deleteAllTask();
         return ResponseEntity.ok(true);
