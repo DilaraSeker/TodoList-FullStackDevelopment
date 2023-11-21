@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 // Java List
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/todos")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class TodoControllerImpl implements ITodoController<Todo> {
